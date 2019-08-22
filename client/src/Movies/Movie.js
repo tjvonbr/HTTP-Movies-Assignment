@@ -1,48 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Redirect, Link } from 'react-router-dom';
 import axios from "axios";
 import MovieCard from "./MovieCard";
-export default class Movie extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      movie: null
-    };
-  }
 
-  componentDidMount() {
-    this.fetchMovie(this.props.match.params.id);
-  }
+const Movie = props => {
+  const [movie, setMovie] = useState(null)
 
-  componentWillReceiveProps(newProps) {
-    if (this.props.match.params.id !== newProps.match.params.id) {
-      this.fetchMovie(newProps.match.params.id);
-    }
-  }
+  useEffect(() => {
+    if (props.match.params.id !== props.match.params.id)
+    fetchMovie(props.match.params.id);
+  }, [props.match.params.id])
 
-  fetchMovie = id => {
+  const fetchMovie = id => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`)
-      .then(res => this.setState({ movie: res.data }))
+      .then(res => setMovie(res.data))
       .catch(err => console.log(err.response));
   };
 
-  saveMovie = () => {
-    const addToSavedList = this.props.addToSavedList;
-    addToSavedList(this.state.movie);
+  const saveMovie = () => {
+    const addToSavedList = props.addToSavedList;
+    addToSavedList(movie);
   };
 
-  render() {
-    if (!this.state.movie) {
-      return <div>Loading movie information...</div>;
-    }
+  return (
+    <div className="save-wrapper">
+      <MovieCard movie={movie} />
+      <button className="save-btn" onClick={saveMovie}>
+        Save
+      </button>
+      <Link to={`/update-movie/${movie.id}`}>
+        <button className="update-btn">
+          Update
+        </button>
+      </Link>
+      <Redirect
+        to={{
+          pathname: "/update-movie/:id",
+          state: {referrer: movie}
+        }}
+      />
+    </div>
+  );
+};
 
-    return (
-      <div className="save-wrapper">
-        <MovieCard movie={this.state.movie} />
-        <div className="save-button" onClick={this.saveMovie}>
-          Save
-        </div>
-      </div>
-    );
-  }
-}
+export default Movie;

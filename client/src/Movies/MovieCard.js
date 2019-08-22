@@ -18,6 +18,7 @@ const MovieCard = props => {
           {star}
         </div>
       ))}
+      <button className="btn delete-btn">Delete</button>
     </div>
   );
 };

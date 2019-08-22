@@ -53,7 +53,13 @@ body {
   width: 75%;
   margin: 1rem auto;
 }
-.save-button {
+
+.btn-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.save-btn {
   position: absolute;
   top: 25px;
   right: 25px;
@@ -61,9 +67,33 @@ body {
   padding: 5px 10px;
   background-color: lightseagreen;
 }
-.save-button:hover {
-  background-color: green;
+
+.update-btn {
+  position: absolute;
+  top: 25px;
+  right: 90px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightseagreen;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: red;
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
   color: white;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background: white;
+  color: red;
+  border: 1px solid red;
+  cursor: pointer;
 }
 
 .home-button {
