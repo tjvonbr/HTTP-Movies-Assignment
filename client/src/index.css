@@ -54,48 +54,6 @@ body {
   margin: 1rem auto;
 }
 
-.btn-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.save-btn {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  border: 1px solid grey;
-  padding: 5px 10px;
-  background-color: lightseagreen;
-}
-
-.update-btn {
-  position: absolute;
-  top: 25px;
-  right: 90px;
-  border: 1px solid grey;
-  padding: 5px 10px;
-  background-color: lightseagreen;
-}
-
-.delete-btn {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  background: red;
-  border: none;
-  padding: 5px;
-  border-radius: 3px;
-  color: white;
-  font-weight: bold;
-}
-
-.delete-btn:hover {
-  background: white;
-  color: red;
-  border: 1px solid red;
-  cursor: pointer;
-}
-
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
@@ -104,4 +62,60 @@ body {
 .movie-warning {
   color: red;
   text-align: center;
+}
+
+.btn {
+  width: 100px;
+  padding: 5px;
+  margin: 10px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.save-btn {
+  background-color: white;
+  color: green;
+  border: 1px solid green;
+}
+
+.save-btn:hover {
+  background-color: green;
+  color: white;
+}
+
+.edit-btn {
+  background-color: white;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
+}
+
+.edit-btn:hover {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.delete-btn {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+}
+
+.delete-btn:hover {
+  background-color: red;
+  color: white;
+}
+
+.fetch-btn {
+  background-color: white;
+  color: lightcoral;
+  border: 1px solid lightcoral;
+}
+
+.fetch-btn:hover {
+  background-color: lightcoral;
+  color: white;
 }
