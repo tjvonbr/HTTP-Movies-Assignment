@@ -53,18 +53,6 @@ body {
   width: 75%;
   margin: 1rem auto;
 }
-.save-button {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  border: 1px solid grey;
-  padding: 5px 10px;
-  background-color: lightseagreen;
-}
-.save-button:hover {
-  background-color: green;
-  color: white;
-}
 
 .home-button {
   padding: 5px 10px;
@@ -74,4 +62,60 @@ body {
 .movie-warning {
   color: red;
   text-align: center;
+}
+
+.btn {
+  width: 100px;
+  padding: 5px;
+  margin: 10px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.save-btn {
+  background-color: white;
+  color: green;
+  border: 1px solid green;
+}
+
+.save-btn:hover {
+  background-color: green;
+  color: white;
+}
+
+.edit-btn {
+  background-color: white;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
+}
+
+.edit-btn:hover {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.delete-btn {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+}
+
+.delete-btn:hover {
+  background-color: red;
+  color: white;
+}
+
+.fetch-btn {
+  background-color: white;
+  color: lightcoral;
+  border: 1px solid lightcoral;
+}
+
+.fetch-btn:hover {
+  background-color: lightcoral;
+  color: white;
 }
